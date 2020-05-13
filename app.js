@@ -7,22 +7,70 @@ const port = 8000;
 
 // App routes to root and print inspiring message to the browser
 app.get('/', function (req, res) {
-  res.send('You are great person!')
+  res.send(`
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h1>You are looking GREAT today!</h1>
+  <a href="http://localhost:8000/legal">Legal Page</a>
+  <br>
+  <a href="http://localhost:8000/about">About Page</a>
+  <br>
+  <a href="http://localhost:8000/contact">Contact Page</a>
+  </body>
+  </html>
+  `)
 });
 
 // creates message to legal page route (http://localhost:8000/legal)
 app.get('/legal', function (req, res) {
-  res.send('You are looking at the legal terms page')
+  res.send(`
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h1>This is Legal Terms page</h1>
+  <a href="http://localhost:8000">Back to Home Page</a>
+  <br>
+  <a href="http://localhost:8000/about">About Page</a>
+  <br>
+  <a href="http://localhost:8000/contact">Contact Page</a>
+  </body>
+  </html>
+  `)
 });
 
 // creates message to about page route (http://localhost:8000/about)
 app.get('/about', function (req, res) {
-  res.send('You are looking at the site info page')
+  res.send(`
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h1>This is About Page</h1>
+  <a href="http://localhost:8000">Back to Home Page</a>
+  <br>
+  <a href="http://localhost:8000/legal">Legal Page</a>
+  <br>
+  <a href="http://localhost:8000/contact">Contact Page</a>
+  </body>
+  </html>
+  `);
 });
 
 // creates message to contact page route (http://localhost:8000/contact)
 app.get('/contact', function (req, res) {
-  res.send('You are looking at the contact information page')
+  res.send(`
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h1>This is Contact Page</h1>
+  <a href="http://localhost:8000">Back to Home Page</a>
+  <br>
+  <a href="http://localhost:8000/legal">Legal Page</a>
+  <br>
+  <a href="http://localhost:8000/about">About Page</a>
+  </body>
+  </html>
+  `)
 });
 
 // .listen is used to tell the express server that you created where to 
